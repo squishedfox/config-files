@@ -14,23 +14,27 @@ sudo pacman -S Ripgrep
 4. Install make and cmake required for 'nvim-telescope/telescope-fzf-native.nvim'
 
 ```sh
-sudo pacman -S make cmake
+sudo pacman -S make cmake gcc
 ```
 
-4. Install Rust onto your system
-5. Install rust tools with
+5. Install fd for telescope. see https://github.com/sharkdp/fd and https://repology.org/repository/arch
+
+```sh
+sudo pacman -S fd
+```
+
+6. Install Rust onto your system
+7. Install rust tools with
 
 ```sh
 rustup component add rust-analyzer rust-src clippy rustfmt
 ```
 
-6. Install other language servers
+8. Install other language servers
 
 ```sh
 sudo pacman -S lua-language-server
 ```
 
-7. Install Plugins with `PlugInstall`
-
-
-8. Happy Coding
+9. Install Plugins with `PlugInstall`
+10. Happy Coding

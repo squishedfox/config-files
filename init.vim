@@ -9,7 +9,9 @@ call plug#begin()
 	Plug 'L3MON4D3/LuaSnip'
 	Plug 'saadparwaiz1/cmp_luasnip'
 	" Finder
+	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+	Plug 'nvim-telescope/telescope.nvim'
 	" Theme
 	Plug 'EdenEast/nightfox.nvim'
 	Plug 'nvim-tree/nvim-web-devicons'
