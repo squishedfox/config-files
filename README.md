@@ -33,7 +33,7 @@ rustup component add rust-analyzer rust-src clippy rustfmt
 8. Install other language servers
 
 ```sh
-sudo pacman -S lua-language-server
+sudo pacman -S lua-language-server tree-sitter-cli
 ```
 
 9. Install Plugins with `PlugInstall`

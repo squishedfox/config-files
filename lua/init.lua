@@ -1,4 +1,5 @@
 require('lsp')
+require('debugger')
+require('syntax')
 require('fs')
 require('theme')
-

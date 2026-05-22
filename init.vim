@@ -8,6 +8,15 @@ call plug#begin()
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'L3MON4D3/LuaSnip'
 	Plug 'saadparwaiz1/cmp_luasnip'
+	" Rust Specific LSP
+	Plug 'mrcjkb/rustaceanvim'
+	" Debugger
+	Plug 'mfussenegger/nvim-dap'
+	Plug 'mfussenegger/nvim-dap-ui'
+	" Syntax Highlighter
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+	Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 	" Finder
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -18,6 +27,7 @@ call plug#begin()
 	Plug 'nvim-tree/nvim-tree.lua'
 	Plug 'nanozuki/tabby.nvim'
 	Plug 'lewis6991/gitsigns.nvim'
+
 call plug#end()
 
 set number
