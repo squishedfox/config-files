@@ -27,7 +27,10 @@ call plug#begin()
 	Plug 'nvim-tree/nvim-tree.lua'
 	Plug 'nanozuki/tabby.nvim'
 	Plug 'lewis6991/gitsigns.nvim'
-
+	" Enhancements	
+	Plug 'folke/which-key.nvim'
+	Plug 'numToStr/Comment.nvim'
+	Plug 'windwp/nvim-autopairs'
 call plug#end()
 
 set number

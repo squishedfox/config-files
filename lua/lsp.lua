@@ -23,11 +23,8 @@ local on_attach = function(_, bufnr)
   vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 end
 
--- Add this to your on_attach or a separate block
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
--- completion.lua
 
 local cmp = require("cmp")
 local luasnip = require("luasnip")
@@ -73,7 +70,6 @@ cmp.setup({
   }),
 })
 
--- Command-line completion
 cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
@@ -89,18 +85,14 @@ cmp.setup.cmdline("/", {
   },
 })
 
--- Rust
-vim.lsp.config("rust_analyzer", {
+-- Apply on_attach + capabilities to every LSP. Per-server blocks below only
+-- contain fields that deviate from nvim-lspconfig defaults.
+vim.lsp.config("*", {
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
--- Lua
 vim.lsp.config("lua_ls", {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  -- cmd = { "lua-language-server" },
-  root_markers = { ".luarc.json", ".luarc.jsonc", ".luacheckrc" },
   settings = {
     Lua = {
       runtime = { version = "LuaJIT" },
@@ -114,13 +106,10 @@ vim.lsp.config("lua_ls", {
   },
 })
 
--- Neovim (uses the running nvim binary)
-vim.lsp.config("neovim", {
-  on_attach = on_attach,
-  cmd = { "nvim", "--nofork", "--headless", "--cmd", "lua print('neovim lsp started')" },
-  root_markers = { "init.lua", ".nvimrc", "nvim" },
+vim.lsp.enable({
+  "rust_analyzer",
+  "ts_ls",
+  "lua_ls",
+  "vimls",
 })
-
--- Enable them all
-vim.lsp.enable({ "rust_analyzer", "lua_ls", "neovim" })
 
