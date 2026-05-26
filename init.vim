@@ -13,6 +13,15 @@ call plug#begin()
 	" Debugger
 	Plug 'mfussenegger/nvim-dap'
 	Plug 'mfussenegger/nvim-dap-ui'
+	" Testing
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'antoinemadec/FixCursorHold.nvim'
+	Plug 'nvim-neotest/nvim-nio'
+	Plug 'nvim-neotest/neotest'
+	Plug 'nvim-neotest/neotest-plenary'
+	" Testing for rust
+	Plug 'mrcjkb/rustaceanvim' 
+	" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " commented out but required
 	" Syntax Highlighter
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'nvim-treesitter/nvim-treesitter-textobjects'
