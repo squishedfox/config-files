@@ -21,8 +21,8 @@ require("nvim-tree").setup({
 })
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-
 vim.g.nvim_tree_side = "left"
+
 -- This ensures files open in the window to the right
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "NvimTree",
@@ -30,3 +30,4 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_set_current_win(vim.api.nvim_get_current_win())
 	end,
 })
+
