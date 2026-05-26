@@ -38,3 +38,78 @@ sudo pacman -S lua-language-server tree-sitter-cli
 
 9. Install Plugins with `PlugInstall`
 10. Happy Coding
+
+## Key bindings
+
+Leader key is `\` (Neovim default).
+
+### LSP
+
+| Key          | Action                       |
+| ------------ | ---------------------------- |
+| `grd`        | Go to declaration            |
+| `grD`        | Go to definition             |
+| `gri`        | Go to implementation         |
+| `grr`        | Find references              |
+| `grn`        | Rename symbol                |
+| `g.`         | Code action                  |
+| `K`          | Hover documentation          |
+| `E`          | Show diagnostic in float     |
+| `<C-k>`      | Signature help               |
+| `<leader>D`  | Type definition              |
+| `<leader>f`  | Format buffer                |
+| `<leader>wa` | Add workspace folder         |
+| `<leader>wr` | Remove workspace folder      |
+| `<leader>wl` | List workspace folders       |
+
+### Completion (nvim-cmp)
+
+| Key         | Action                            |
+| ----------- | --------------------------------- |
+| `<C-Space>` | Trigger completion                |
+| `<CR>`      | Confirm selection                 |
+| `<Tab>`     | Next item / jump snippet forward  |
+| `<S-Tab>`   | Prev item / jump snippet backward |
+| `<C-b>`     | Scroll docs up                    |
+| `<C-f>`     | Scroll docs down                  |
+| `<C-e>`     | Abort completion                  |
+
+### File explorer & Telescope
+
+| Key          | Action            |
+| ------------ | ----------------- |
+| `<leader>e`  | Toggle NvimTree   |
+| `<leader>ff` | Find files        |
+| `<leader>fg` | Live grep         |
+| `<leader>fb` | List open buffers |
+| `<leader>fh` | Search help tags  |
+
+### Comments
+
+| Key             | Action                              |
+| --------------- | ----------------------------------- |
+| `gcc`           | Toggle current line as comment      |
+| `gc` (visual)   | Toggle selection as comment         |
+| `gcap`          | Toggle around paragraph             |
+| `gbc`           | Toggle current line as block comment |
+
+### Debugger (DAP)
+
+| Key          | Action                          |
+| ------------ | ------------------------------- |
+| `<F5>`       | Continue / start debug session  |
+| `<F10>`      | Step over                       |
+| `<F11>`      | Step into                       |
+| `<F12>`      | Step out                        |
+| `<leader>db` | Toggle breakpoint               |
+| `<leader>dB` | Conditional breakpoint (prompt) |
+| `<leader>dr` | Open DAP REPL                   |
+| `<leader>dl` | Re-run last debug session       |
+| `<leader>du` | Toggle DAP UI panel             |
+| `<leader>dt` | Terminate session               |
+
+### Terminal
+
+| Key     | Action                       |
+| ------- | ---------------------------- |
+| `<Esc>` | Exit terminal mode to normal |

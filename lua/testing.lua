@@ -11,21 +11,37 @@ vim.g.rustaceanvim = {
   -- LSP configuration
   server = {
     on_attach = function(_, bufnr)
-	-- you can also put keymaps in here
-	-- local bufnr = vim.api.nvim_get_current_buf()
-	vim.keymap.set("n", "<leader>a", function()
-		vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
-		-- or vim.lsp.buf.codeAction() if you don't want grouping.
-		end,
-		{ silent = true, buffer = bufnr }
-	)
-	vim.keymap.set("n", "K", function()
-		-- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
-			vim.cmd.RustLsp({'hover', 'actions'})
-		end,
-		{ silent = true, buffer = bufnr }
-	)
-      end,
+	vim.keymap.set("n", "<leader>n", function ()
+		require('neotest').run.run();
+	end, { buf = bufnr, desc = "run the nearest test"})
+	vim.keymap.set("n", "<leader>nf", function ()
+		require('neotest').run.run(vim.fn.expand('%'))
+	end, { buf = bufnr, desc = "Run current file"})
+	vim.keymap.set("n", "<leader>na", function ()
+		require('neotest').run.run({ suite = true })
+	end, { buf = bufnr, desc = "Run all tests"})
+	vim.keymap.set("n", "<leader>nd", function ()
+		require('neotest').run.run({ strategy = 'dap' })
+	end, { buf = bufnr, desc = "Debug nearest test"})
+        vim.keymap.set("n", "<leader>ns", function ()
+		require('neotest').run.stop()
+	end, { buf = bufnr, desc = "Stop test"})
+	vim.keymap.set("n", "<leader>nn", function ()
+		require('neotest').run.attach()
+	end, { buf = bufnr, desc = "Attach to the nearest test"})
+	vim.keymap.set("n", "<leader>no", function ()
+		require('neotest').output.open()
+	end, { buf = bufnr, desc = "Show test output"})
+	vim.keymap.set("n", "<leader>np", function ()
+		require('neotest').output_panel.toggle()
+	end, { buf = bufnr, desc = "Toggle output panel"})
+	vim.keymap.set("n", "<leader>nv", function ()
+		require('neotest').summary.toggle()
+	end, { buf = bufnr, desc = "Toggle summary"})
+	vim.keymap.set("n", "<leader>nc", function ()
+		require('neotest').run.run({ suite = true, env = { CI = true }})
+	end, { buf = bufnr, desc = "Run all tests with CI"})
+    end,
   },
   -- DAP configuration
   dap = {},
