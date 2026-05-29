@@ -84,7 +84,6 @@ cmp.setup.cmdline("/", {
     { name = "buffer" },
   },
 })
-
 -- Apply on_attach + capabilities to every LSP. Per-server blocks below only
 -- contain fields that deviate from nvim-lspconfig defaults.
 vim.lsp.config("*", {

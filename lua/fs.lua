@@ -8,6 +8,16 @@ require("tabby").setup({
 	},
 })
 require("nvim-tree").setup({
+  filters = {
+    enable = false,
+    dotfiles = false,
+    git_ignored = false,
+  },
+  actions = {
+    open_file = {
+      resize_window = true,
+    },
+  },
 	on_attach = function(_)
 		local telescope = require('telescope')
 		telescope.load_extension('fzf')
