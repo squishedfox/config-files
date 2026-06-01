@@ -75,8 +75,20 @@ rustup component add rust-analyzer rust-src clippy rustfmt
 brew install lua-language-server tree-sitter-cli
 ```
 
-9. Install Plugins with `PlugInstall`
-10. Happy Coding
+9. Install NodeJS
+
+```sh
+brew install node
+```
+
+10. Install language servers for web developmenet
+
+```sh
+npm install -g typescript-language-server typescript
+```
+
+10. Install Plugins with `PlugInstall`
+11. Happy Coding
 
 ## Key bindings
 
