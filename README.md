@@ -44,6 +44,7 @@ sudo pacman -S lua-language-server tree-sitter-cli
 ```sh
 npm install -g typescript typescript-language-server eslint prettier
 ```
+
 11. Install Plugins with `PlugInstall`
 12. Happy Coding
 
