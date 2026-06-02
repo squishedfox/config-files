@@ -38,8 +38,14 @@ rustup component add rust-analyzer rust-src clippy rustfmt
 sudo pacman -S lua-language-server tree-sitter-cli
 ```
 
-9. Install Plugins with `PlugInstall`
-10. Happy Coding
+9. Install `node` following https://nodejs.org/en/download
+10. Install other language servers for web development
+
+```sh
+npm install -g typescript typescript-language-server eslint prettier
+```
+11. Install Plugins with `PlugInstall`
+12. Happy Coding
 
 ### On MacOS using Homebrew
 
@@ -84,11 +90,11 @@ brew install node
 10. Install language servers for web developmenet
 
 ```sh
-npm install -g typescript-language-server typescript
+npm install -g typescript-language-server typescript eslint prettier
 ```
 
-10. Install Plugins with `PlugInstall`
-11. Happy Coding
+11. Install Plugins with `PlugInstall`
+12. Happy Coding
 
 ## Key bindings
 
