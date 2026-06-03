@@ -112,3 +112,4 @@ vim.lsp.enable({
   "vimls",
 })
 
+require("tailwind-tools").setup()
