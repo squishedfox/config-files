@@ -42,7 +42,13 @@ sudo pacman -S lua-language-server tree-sitter-cli
 10. Install other language servers for web development
 
 ```sh
-npm install -g typescript typescript-language-server eslint prettier
+npm install -g typescript-language-server \
+  typescript \
+  eslint \
+  prettier \
+  vscode-langservers-extracted \
+  @tailwindcss/language-server \
+  sql-language-server
 ```
 
 11. Install Plugins with `PlugInstall`
@@ -91,7 +97,13 @@ brew install node
 10. Install language servers for web developmenet
 
 ```sh
-npm install -g typescript-language-server typescript eslint prettier
+npm install -g typescript-language-server \
+  typescript \
+  eslint \
+  prettier \
+  vscode-langservers-extracted \
+  @tailwindcss/language-server \
+  sql-language-server
 ```
 
 11. Install Plugins with `PlugInstall`

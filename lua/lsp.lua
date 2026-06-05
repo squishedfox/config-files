@@ -105,10 +105,16 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+-- for more configurations see https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 vim.lsp.enable({
   "rust_analyzer",
   "ts_ls",
   "lua_ls",
   "vimls",
+  "html",
+  "cssls",
+  "tailwindcss",
+  "sqlls",
+  "json",
 })
 
