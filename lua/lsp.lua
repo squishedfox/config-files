@@ -118,3 +118,4 @@ vim.lsp.enable({
   "json",
 })
 
+require("tailwind-tools").setup()

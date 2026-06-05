@@ -20,7 +20,7 @@ call plug#begin()
 	Plug 'nvim-neotest/neotest'
 	Plug 'nvim-neotest/neotest-plenary'
 	" Testing for rust
-	Plug 'mrcjkb/rustaceanvim' 
+	Plug 'mrcjkb/rustaceanvim'
 	" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " commented out but required
 	" Syntax Highlighter
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -36,10 +36,13 @@ call plug#begin()
 	Plug 'nvim-tree/nvim-tree.lua'
 	Plug 'nanozuki/tabby.nvim'
 	Plug 'lewis6991/gitsigns.nvim'
-	" Enhancements	
+	" Enhancements
 	Plug 'folke/which-key.nvim'
 	Plug 'numToStr/Comment.nvim'
 	Plug 'windwp/nvim-autopairs'
+  " Tailind
+  Plug 'prettier-plugin-tailwindcss'
+  Plug 'luckasRanarison/tailwind-tools.nvim'
 call plug#end()
 
 set number
