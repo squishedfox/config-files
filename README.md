@@ -35,7 +35,7 @@ rustup component add rust-analyzer rust-src clippy rustfmt
 8. Install other language servers
 
 ```sh
-sudo pacman -S lua-language-server tree-sitter-cli
+sudo pacman -S lua-language-server tree-sitter-cli stylua
 ```
 
 9. Install `node` following https://nodejs.org/en/download
@@ -93,7 +93,7 @@ rustup component add rust-analyzer rust-src clippy rustfmt
 8. Install other language servers
 
 ```sh
-brew install lua-language-server tree-sitter-cli
+brew install lua-language-server tree-sitter-cli stylua
 ```
 
 9. Install NodeJS
