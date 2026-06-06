@@ -40,9 +40,6 @@ call plug#begin()
 	Plug 'folke/which-key.nvim'
 	Plug 'numToStr/Comment.nvim'
 	Plug 'windwp/nvim-autopairs'
-  " Tailind
-  Plug 'prettier-plugin-tailwindcss'
-  Plug 'luckasRanarison/tailwind-tools.nvim'
 call plug#end()
 
 set number
@@ -52,4 +49,6 @@ colorscheme carbonfox
 " Always show tabline plugin
 " vim.o.showtabline = 2
 lua require('init')
+" Use system clipboard as default register
+set clipboard+=unnamedplus,unnamed
 
