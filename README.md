@@ -51,8 +51,16 @@ npm install -g typescript-language-server \
   sql-language-server
 ```
 
-11. Install Plugins with `PlugInstall`
-12. Happy Coding
+11. Add Clipboard support
+
+```sh
+sudo pacman -S xclip  # for X11
+# or
+sudo pacman -S wl-clipboard  # for Wayland
+```
+
+12. Install Plugins with `PlugInstall`
+13. Happy Coding
 
 ### On MacOS using Homebrew
 
