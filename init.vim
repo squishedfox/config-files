@@ -41,6 +41,7 @@ call plug#begin()
 	Plug 'numToStr/Comment.nvim'
 	Plug 'windwp/nvim-autopairs'
   Plug 'nvim-lualine/lualine.nvim'
+  Plug 'stevearc/conform.nvim'
 call plug#end()
 
 set number

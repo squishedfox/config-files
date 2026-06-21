@@ -48,7 +48,8 @@ npm install -g typescript-language-server \
   prettier \
   vscode-langservers-extracted \
   @tailwindcss/language-server \
-  sql-language-server
+  sql-language-server \
+  @typespec/compiler
 ```
 
 11. Add Clipboard support
@@ -111,7 +112,8 @@ npm install -g typescript-language-server \
   prettier \
   vscode-langservers-extracted \
   @tailwindcss/language-server \
-  sql-language-server
+  sql-language-server \
+  @typespec/compiler
 ```
 
 11. Install Plugins with `PlugInstall`
