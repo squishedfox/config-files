@@ -1,43 +1,3 @@
-local format_augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
-
-vim.api.nvim_create_autocmd("FileType", {
-  group = format_augroup,
-  pattern = { "typescript", "typescriptreact", "javascript", "javascriptreact", "json", "css", "scss" },
-  callback = function(args)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = args.buf,
-      callback = function()
-        vim.lsp.buf.format({
-          bufnr = args.buf,
-          timeout_ms = 2000,
-          filter = function(client)
-            return client.name == "typescript-tools" or client.name == "tsserver"
-          end,
-        })
-      end,
-    })
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  group = format_augroup,
-  pattern = { "lua" },
-  callback = function(args)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = args.buf,
-      callback = function()
-        vim.lsp.buf.format({
-          bufnr = args.buf,
-          timeout_ms = 2000,
-          filter = function(client)
-            return client.name == "lua_ls"
-          end,
-        })
-      end,
-    })
-  end,
-})
-
 local on_attach = function(_, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -157,4 +117,3 @@ vim.lsp.enable({
   "json",
   "stylua"
 })
-

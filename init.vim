@@ -40,6 +40,7 @@ call plug#begin()
 	Plug 'folke/which-key.nvim'
 	Plug 'numToStr/Comment.nvim'
 	Plug 'windwp/nvim-autopairs'
+  Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 set number
