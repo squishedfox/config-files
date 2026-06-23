@@ -8,3 +8,7 @@ vim.opt.termguicolors = true
 vim.o.showtabline = 2
 vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
 
+require('lualine').setup({
+  theme='iceberg_dark'
+})
+

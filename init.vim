@@ -40,6 +40,7 @@ call plug#begin()
 	Plug 'folke/which-key.nvim'
 	Plug 'numToStr/Comment.nvim'
 	Plug 'windwp/nvim-autopairs'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'stevearc/conform.nvim'
 call plug#end()
 
@@ -50,4 +51,6 @@ colorscheme carbonfox
 " Always show tabline plugin
 " vim.o.showtabline = 2
 lua require('init')
+" Use system clipboard as default register
+set clipboard+=unnamedplus,unnamed
 

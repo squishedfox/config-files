@@ -35,18 +35,33 @@ rustup component add rust-analyzer rust-src clippy rustfmt
 8. Install other language servers
 
 ```sh
-sudo pacman -S lua-language-server tree-sitter-cli
+sudo pacman -S lua-language-server tree-sitter-cli stylua
 ```
 
 9. Install `node` following https://nodejs.org/en/download
 10. Install other language servers for web development
 
 ```sh
-npm install -g typescript typescript-language-server eslint prettier @tailwindcss/language-server
+npm install -g typescript-language-server \
+  typescript \
+  eslint \
+  prettier \
+  vscode-langservers-extracted \
+  @tailwindcss/language-server \
+  sql-language-server \
+  @typespec/compiler
 ```
 
-11. Install Plugins with `PlugInstall`
-12. Happy Coding
+11. Add Clipboard support
+
+```sh
+sudo pacman -S xclip  # for X11
+# or
+sudo pacman -S wl-clipboard  # for Wayland
+```
+
+12. Install Plugins with `PlugInstall`
+13. Happy Coding
 
 ### On MacOS using Homebrew
 
@@ -79,7 +94,7 @@ rustup component add rust-analyzer rust-src clippy rustfmt
 8. Install other language servers
 
 ```sh
-brew install lua-language-server tree-sitter-cli
+brew install lua-language-server tree-sitter-cli stylua
 ```
 
 9. Install NodeJS
@@ -91,7 +106,14 @@ brew install node
 10. Install language servers for web developmenet
 
 ```sh
-npm install -g typescript-language-server typescript eslint prettier @tailwindcss/language-server
+npm install -g typescript-language-server \
+  typescript \
+  eslint \
+  prettier \
+  vscode-langservers-extracted \
+  @tailwindcss/language-server \
+  sql-language-server \
+  @typespec/compiler
 ```
 
 11. Install Plugins with `PlugInstall`

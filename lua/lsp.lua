@@ -10,14 +10,12 @@ require("conform").setup({
   },
 })
 
-
-
 local on_attach = function(_, bufnr)
   local conform = require("conform")
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-  vim.keymap.set("n", "grd", vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set("n", "grD", vim.lsp.buf.definition, bufopts)
+  vim.keymap.set("n", "grd", vim.lsp.buf.definition, bufopts)
+  vim.keymap.set("n", "grD", vim.lsp.buf.declaration, bufopts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
   vim.keymap.set("n", "E", vim.diagnostic.open_float, bufopts)
   vim.keymap.set("n", "gri", vim.lsp.buf.implementation, bufopts)
@@ -138,9 +136,16 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+-- for more configurations see https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 vim.lsp.enable({
   "rust_analyzer",
   "ts_ls",
   "lua_ls",
   "vimls",
+  "html",
+  "cssls",
+  "tailwindcss",
+  "sqlls",
+  "json",
+  "stylua"
 })
