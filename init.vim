@@ -40,9 +40,7 @@ call plug#begin()
 	Plug 'folke/which-key.nvim'
 	Plug 'numToStr/Comment.nvim'
 	Plug 'windwp/nvim-autopairs'
-  " Tailind
-  Plug 'prettier-plugin-tailwindcss'
-  Plug 'luckasRanarison/tailwind-tools.nvim'
+  Plug 'stevearc/conform.nvim'
 call plug#end()
 
 set number

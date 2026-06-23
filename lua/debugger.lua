@@ -2,7 +2,7 @@ require('dap').adapters.codelldb = {
   type = 'server',
   port = "${port}",
   executable = {
-    command = 'codelldb',   -- install via: cargo install codelldb
+    command = 'codelldb', -- install via: cargo install codelldb
     args = { "--port", "${port}" },
   },
 }

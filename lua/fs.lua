@@ -1,11 +1,11 @@
 require("tabby").setup({
-	tabpage = {
-		each = function(bufnr, winid, number)
-			return {
-				type = "window", -- Treats each window as a "tab"
-			}
-		end,
-	},
+  tabpage = {
+    each = function(bufnr, winid, number)
+      return {
+        type = "window", -- Treats each window as a "tab"
+      }
+    end,
+  },
 })
 require("nvim-tree").setup({
   filters = {
@@ -33,9 +33,8 @@ vim.g.nvim_tree_side = "left"
 
 -- This ensures files open in the window to the right
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "NvimTree",
-	callback = function()
-		vim.api.nvim_set_current_win(vim.api.nvim_get_current_win())
-	end,
+  pattern = "NvimTree",
+  callback = function()
+    vim.api.nvim_set_current_win(vim.api.nvim_get_current_win())
+  end,
 })
-
