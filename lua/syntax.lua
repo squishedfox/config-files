@@ -92,3 +92,6 @@ end)
 vim.keymap.set('n', '<leader>sp', function()
   swap.swap_previous('@parameter.inner')
 end)
+
+require('nvim-autopairs').setup()
+

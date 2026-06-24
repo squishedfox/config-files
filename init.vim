@@ -42,6 +42,8 @@ call plug#begin()
 	Plug 'windwp/nvim-autopairs'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'stevearc/conform.nvim'
+  Plug 'windwp/nvim-autopairs'
+  Plug 'mattn/emmet-vim'
 call plug#end()
 
 set number
