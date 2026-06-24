@@ -1,4 +1,5 @@
-require("conform").setup({
+local conform = require("conform")
+conform.setup({
   formatters_by_ft = {
     lua = { "stylua" },
     -- Conform will run multiple formatters sequentially
@@ -6,12 +7,30 @@ require("conform").setup({
     go = { "gofmt", lsp_format = "fallback" },
     -- Conform will run the first available formatter
     javascript = { "prettierd", "prettier", lsp_fallback = "fallback", stop_after_first = true },
-    typescript = { "prettierd", "prettier", lsp_format = "fallback", stop_after_first = true },
+    typescript = { "eslint_d", "prettier", lsp_format = "fallback", stop_after_first = false },
   },
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    conform.format({ bufnr = args.buf })
+  end,
+})
+
+vim.api.nvim_create_user_command("Format", function(args)
+  local range = nil
+  if args.count ~= -1 then
+    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+    range = {
+      start = { args.line1, 0 },
+      ["end"] = { args.line2, end_line:len() },
+    }
+  end
+  conform.format({ async = true, lsp_format = "fallback", range = range })
+end, { range = true })
+
 local on_attach = function(_, bufnr)
-  local conform = require("conform")
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
   vim.keymap.set("n", "grd", vim.lsp.buf.definition, bufopts)
@@ -34,24 +53,7 @@ local on_attach = function(_, bufnr)
   end, bufopts)
   vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*",
-    callback = function(args)
-      conform.format({ bufnr = args.buf })
-    end,
-  })
 
-  vim.api.nvim_create_user_command("Format", function(args)
-    local range = nil
-    if args.count ~= -1 then
-      local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
-      range = {
-        start = { args.line1, 0 },
-        ["end"] = { args.line2, end_line:len() },
-      }
-    end
-    conform.format({ async = true, lsp_format = "fallback", range = range })
-  end, { range = true })
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
