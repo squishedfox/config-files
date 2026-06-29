@@ -1,14 +1,4 @@
 local conform = require("conform")
-require("conform").setup({
-  formatters_by_ft = {
-
-  },
-  format_on_save = {
-    timeout_ms = 1000,
-    lsp_fallback = true,
-  },
-})
-
 conform.setup({
   formatters = {
     eslint = {
@@ -24,24 +14,31 @@ conform.setup({
   },
   formatters_by_ft = {
     -- Web stuff
-    javascript = { { "prettierd", "prettier" }, "eslint" },
-    typescript = { { "prettierd", "prettier" }, "eslint" },
-    javascriptreact = { { "prettierd", "prettier" }, "eslint" },
-    typescriptreact = { { "prettierd", "prettier" }, "eslint" },
-    css = { { "prettierd", "prettier" } },
-    html = { { "prettierd", "prettier" } },
-    json = { { "prettierd", "prettier" } },
-    markdown = { { "prettierd", "prettier" } },
-    yaml = { { "prettierd", "prettier" } },
+    javascript = { "prettierd", "prettier", "eslint" },
+    typescript = { "prettierd", "prettier", "eslint" },
+    javascriptreact = { "prettierd", "prettier", "eslint" },
+    typescriptreact = { "prettierd", "prettier", "eslint" },
+    css = { "prettierd", "prettier" },
+    html = { "prettierd", "prettier" },
+    json = { "prettierd", "prettier" },
+    markdown = { "prettierd", "prettier" },
+    yaml = { "prettierd", "prettier" },
+
+    -- Rust
     rust = { "rustfmt" },
+
+    -- Lua
     lua = { "stylua" },
+
+    -- Go
     go = { "gofmt", "goimports" },
   },
   format_on_save = {
     timeout_ms = 1500,
     lsp_fallback = true,
+    stop_after_first = true, -- stops after first successful formatter (tries prettierd first, falls back to prettier)
   },
-})
+});
 
 local on_attach = function(_, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -77,6 +74,15 @@ local on_attach = function(_, bufnr)
     end
     conform.format({ async = true, lsp_format = "fallback", range = range })
   end, { range = true })
+
+  -- allow to restart or stop the language server
+  vim.api.nvim_create_user_command("LspRestart", function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    for _, c in ipairs(vim.lsp.get_clients({ bufnr = bufnr })) do
+      c.stop(false)
+    end
+    vim.cmd("edit")
+  end, {})
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
